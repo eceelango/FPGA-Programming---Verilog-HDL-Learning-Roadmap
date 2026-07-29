@@ -22,6 +22,14 @@ Behavioral modeling uses procedural statements such as `always` blocks and condi
 
 ---
 
+##  Block Diagram
+
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/Block%20Diagram%20%26%20Flow%20Chart.png" width="80%">
+</p>
+
+---
+
 ## ⚙️ Features
 
 - 4-bit synchronous binary up counter
@@ -135,6 +143,13 @@ end
 endmodule
 ```
 
+## Waveform
+
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/stimulation_upcounter.png" width="80%">
+</p>
+
+
 ## 🔄 Counting Sequence
 
 | Decimal | Binary |
@@ -159,6 +174,22 @@ endmodule
 
 ---
 
+## Implemented Design
+
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/implemented_design_upcounter.png" width="80%">
+</p>
+
+---
+
+## Project Summary
+
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/project_summary_upcounter.png" width="80%">
+</p>
+
+---
+
 ## 💻 Simulation
 
 The design can be simulated using:
@@ -167,17 +198,6 @@ The design can be simulated using:
 - ModelSim
 - Icarus Verilog
 - EDA Playground
-
----
-
-## 📂 Project Structure
-
-```
-4-bit-up-counter/
-│── up_counter.v          # Verilog design
-│── up_counter_tb.v       # Testbench
-│── README.md             # Documentation
-```
 
 ---
 
@@ -195,14 +215,6 @@ The **4-Bit Up Counter** was successfully designed and simulated using **Behavio
 - Timer circuits
 - Digital control systems
 - Embedded system applications
-
----
-
-## 👨‍💻 Author
-
-**Name:** *Your Name*  
-**Course:** Digital System Design / Verilog HDL  
-**Institution:** *Your College Name*
 
 ---
 
