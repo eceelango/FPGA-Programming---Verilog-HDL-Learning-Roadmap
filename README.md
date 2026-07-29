@@ -63,6 +63,78 @@ Behavioral modeling uses procedural statements such as `always` blocks and condi
 
 ---
 
+## Code
+```verilog
+`timescale 1ns / 1ps
+
+module up_counter(y,clk,j,k);
+output y;
+input clk,j,k;
+wire [2:0]w;
+
+jk_ff ff_1(w[0],clk,j,k);
+jk_ff ff_2(w[1],w[0],j,k);
+jk_ff ff_3(w[2],w[1],j,k);
+jk_ff ff_4(y,w[2],j,k);
+
+endmodule
+
+module jk_ff(y,clk,j,k);
+
+output reg y;
+input clk,j,k;
+
+always @(negedge clk)
+begin
+    case({j,k})
+        2'b00: y = y;
+        2'b01: y = 1'b0;
+        2'b10: y = 1'b1;
+        2'b11: y = ~y;
+    endcase
+end
+
+endmodule
+```
+
+## Test Bench
+
+```verilog
+`timescale 1ns / 1ps
+
+module tb_upcounter;
+wire y;
+reg j,k,clk;
+integer x;
+
+up_counter uut(.y(y), .clk(clk), .j(j), .k(k));
+
+initial
+begin
+    clk = 0;
+    forever #10 clk = ~clk;
+end
+
+initial
+begin
+    for(x=0; x<5; x=x+1)
+    begin
+        j = $random;
+        k = $random;
+        #10;
+    end
+    $finish;
+end
+
+always @(negedge clk)
+begin
+    #1;
+    $display("clk=%b j=%b k=%b y=%b", clk, j, k, y);
+end
+
+endmodule
+```
+
 ## 🔄 Counting Sequence
 
 | Decimal | Binary |
