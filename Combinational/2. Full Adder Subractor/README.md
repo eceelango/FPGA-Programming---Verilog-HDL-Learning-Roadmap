@@ -214,19 +214,9 @@ endmodule
 
 The testbench uses `$monitor` to display the input and output values during simulation.
 
-```text
-Time=0  | A= 0| B= 1 Cin=0 | S= 1 Cout=0
-Time=10 | A= 5 B= 9 Cin=0 | S=14 Cout=0
-Time=20 | A= 3 B= 7 Cin=0 | S=10 Cout=0
-Time=30 | A= 2 B= 9 Cin=0 | S=11 Cout=0
-Time=40 | A=10 B= 4 Cin=0 | S=14 Cout=0
-Time=50 | A=12 B= 8 Cin=1 | S= 4 Cout=1
-Time=60 | A= 5 B= 3 Cin=1 | S= 2 Cout=1
-Time=70 | A= 7 B= 2 Cin=1 | S= 5 Cout=1
-Time=80 | A= 9 B= 2 Cin=1 | S= 7 Cout=1
-Time=90 | A=15 B= 0 Cin=1 | S=15 Cout=1
-```
-
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/2.%20Full%20Adder%20Subractor/Image/Stimulation.jpeg" width="80%">
+</p>
 ---
 
 ## 🛠️ Tools
