@@ -90,8 +90,8 @@ Y = {1'b0, A[1] & B, A[0] & B}
 
 |Signal| Description|
 |-------|-----------|
-|"A[1:0]"| 2-bit multiplicand|
-|"B"| 1-bit multiplier|
+|A[1:0]| 2-bit multiplicand|
+|B| 1-bit multiplier|
 
 ---
 
@@ -99,7 +99,7 @@ Y = {1'b0, A[1] & B, A[0] & B}
 
 |Signal| Description|
 |-------|-----------|
-|"Y[2:0]"| 3-bit product|
+|Y[2:0]| 3-bit product|
 
 ---
 
