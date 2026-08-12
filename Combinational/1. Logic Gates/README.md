@@ -46,7 +46,7 @@ To design and simulate the **Buffer, NOT, AND, OR, NAND, XOR, and XNOR gates** u
 Each primitive directly represents a physical logic gate:
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/implemented_design_upcounter.png" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/1.%20Logic%20Gates/Image/Gates.png" width="80%">
 </p>
 
 ## 💻 Verilog Design
