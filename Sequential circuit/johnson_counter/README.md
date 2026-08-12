@@ -125,6 +125,8 @@ end
 endmodule
 ```
 
+---
+
 ## Test Bench
 
 ```verilog
@@ -162,125 +164,48 @@ end
 
 endmodule
 ```
+---
 
 ##🌊 Waveform
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Image/stimulation_upcounter.png" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/johnson_counter/Image/stimulation_johnson_counter.jpeg" width="80%">
 </p>
 
+---
 
 ## 🔄 Multiplication Table
 
 |A| A (Decimal)| B| B (Decimal)| Product| Y|
 |----|----------|--|------------|--------|---|
-|"00"| 0| "0"| 0| 0| "000"|
-|"00"| 0| "1"| 1| 0| "000"|
-|"01"| 1| "0"| 0| 0| "000"|
-|"01"| 1| "1"| 1| 1| "001"|
-|"10"| 2| "0"| 0| 0| "000"|
-|"10"| 2| "1"| 1| 2| "010"|
-|"11"| 3| "0"| 0| 0| "000"|
-|"11"| 3| "1"| 1| 3| "011"|
+|00| 0| 0| 0| 0| 000|
+|00| 0| 1| 1| 0| 000|
+|01| 1| 0| 0| 0| 000|
+|01| 1| 1| 1| 1| 001|
+|10| 2| 0| 0| 0| 000|
+|10| 2| 1| 1| 2| 010|
+|11| 3| 0| 0| 0| 000|
+|11| 3| 1| 1| 3| 011|
 
-🔧 Working Principle
+---
 
-The multiplier generates partial products using AND gates.
+## Implemented Design
 
-             A1 ─────┐
-                     │
-             B ──────┼──► AND ───► Y1
-                     │
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/johnson_counter/Image/implemented_design_johnson.jpeg" width="80%">
+</p>
 
-             A0 ─────┐
-                     │
-             B ──────┼──► AND ───► Y0
-                     │
-                     
-             Y2 = 0
+---
 
-The complete operation can be represented as:
+## Project Summary
 
-             A[1:0]
-                │
-                │
-                ▼
-          ┌───────────┐
-          │  AND      │◄──── B
-          │  Gates    │
-          └─────┬─────┘
-                │
-                ▼
-             Y[1:0]
-                
-             Y[2] = 0
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/johnson_counter/Image/project_summary_johnson.jpeg" width="80%">
+</p>
 
-Example 1
+---
 
-For:
-
-A = 10
-B = 1
-
-The operation is:
-
-10 × 1 = 10
-
-Therefore:
-
-Y = 010
-
-Example 2
-
-For:
-
-A = 11
-B = 1
-
-The operation is:
-
-11 × 1 = 11
-
-Therefore:
-
-Y = 011
-
-Example 3
-
-For:
-
-A = 11
-B = 0
-
-The operation is:
-
-11 × 0 = 00
-
-Therefore:
-
-Y = 000
-
-🏗️ Implemented Design
-
-                  ┌─────────┐
-A[0] ────────────►│   AND   │──────► Y[0]
-                  │         │
-B ───────────────►│         │
-                  └─────────┘
-
-                  ┌─────────┐
-A[1] ────────────►│   AND   │──────► Y[1]
-                  │         │
-B ───────────────►│         │
-                  └─────────┘
-
-                  ┌─────────┐
-                  │   0     │──────► Y[2]
-                  └─────────┘
-
-The implemented circuit contains two AND gates and produces a 3-bit product.
-
-📊 Simulation
+## 📊 Simulation
 
 The design can be simulated using:
 
@@ -289,7 +214,9 @@ The design can be simulated using:
 - Icarus Verilog
 - EDA Playground
 
-✅ Result
+---
+
+## ✅ Result
 
 The 2×1 Combinational Multiplier was successfully designed and simulated using Verilog HDL.
 
@@ -297,7 +224,9 @@ The circuit correctly multiplies a 2-bit binary number by a 1-bit binary number 
 
 The simulation results match the expected multiplication table for all possible input combinations.
 
-🚀 Applications
+---
+
+## 🚀 Applications
 
 Combinational multipliers are commonly used in:
 
@@ -312,20 +241,8 @@ Combinational multipliers are commonly used in:
 - Embedded systems
 - MAC (Multiply-Accumulate) units
 
-📚 Concepts Covered
+---
 
-- Combinational circuits
-- Binary multiplication
-- Partial products
-- AND gates
-- Boolean logic
-- Verilog HDL
-- Continuous assignment
-- Testbench creation
-- Truth table verification
-- Simulation and waveform analysis
-- FPGA implementation
-
-📜 License
+## 📜 License
 
 This project is intended for educational and learning purposes.
