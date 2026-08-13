@@ -145,7 +145,7 @@ Corrected Sum = Intermediate Sum + 0110
 ## Waveform
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/8.%20BCD/Image/Stimulation.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/8.%20BCD/Image/Simulation.jpeg" width="80%">
 </p>
 
 ## 💻 Verilog HDL Implementation
