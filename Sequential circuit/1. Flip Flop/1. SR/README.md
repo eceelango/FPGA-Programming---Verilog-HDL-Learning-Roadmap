@@ -104,35 +104,48 @@ Where:
 
 ---
 
+## Schematic
+
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/1.%20SR/Image/Schematic.jpeg" width="80%">
+</p>
+
 ## 💻 Verilog HDL Implementation
 
 ### `sr_flipflop.v`
 
 ```verilog
-`timescale 1ns / 1ps
-
-module sr_flipflop(
-    input clk,
-    input S,
-    input R,
-    output reg Q,
-    output Q_bar
-);
-
-always @(posedge clk)
+module srflipflop(q,qbar,s,r,clk,rst);
+output reg q,qbar;
+input s,r,clk,rst;
+always @(posedge clk or negedge rst)
 begin
-    case ({S, R})
-
-        2'b00: Q <= Q;
-        2'b01: Q <= 1'b0;
-        2'b10: Q <= 1'b1;
-        2'b11: Q <= 1'bx;
-
+    if(!rst)begin
+        q<=0;
+        qbar<=1;
+    end 
+    else
+    begin
+        case ({s,r})
+            2'b00: begin
+                q<=q;
+                qbar<=qbar;
+            end
+            2'b01: begin
+                q<=0;
+                qbar<=1;
+            end
+          2'b10: begin
+                q<= 1;
+                qbar<=0;
+         end
+        2'b11: begin
+            q<= 1'bx;
+            qbar<= 1'bx;
+        end 
     endcase
+end 
 end
-
-assign Q_bar = ~Q;
-
 endmodule
 ```
 
@@ -143,235 +156,60 @@ endmodule
 ### `tb_sr_flipflop.v`
 
 ```verilog
-`timescale 1ns / 1ps
-
-module tb_sr_flipflop;
-
-reg clk;
-reg S;
-reg R;
-
-wire Q;
-wire Q_bar;
-
-sr_flipflop uut(
-    .clk(clk),
-    .S(S),
-    .R(R),
-    .Q(Q),
-    .Q_bar(Q_bar)
-);
-
-initial
-begin
-    clk = 0;
-    forever #10 clk = ~clk;
-end
-
-initial
-begin
-
-    // Hold
-    S = 0;
-    R = 0;
-    #20;
-
-    // Set
-    S = 1;
-    R = 0;
-    #20;
-
-    // Hold
-    S = 0;
-    R = 0;
-    #20;
-
-    // Reset
-    S = 0;
-    R = 1;
-    #20;
-
-    // Hold
-    S = 0;
-    R = 0;
-    #20;
-
-    // Invalid condition
-    S = 1;
-    R = 1;
-    #20;
-
+module srflipflop_tb;
+reg s,r,clk,rst;
+wire q,qbar;
+srflipflop uut (.q(q),.qbar(qbar),.s(s),.r(r),.clk(clk),.rst(rst));
+always #5 clk = ~clk;
+initial begin
+    clk=0;
+    rst=0;
+    s=0;r=0;
+    #10;
+    rst=1;
+    #10;
+    s=0;r=0;
+    #10;
+    s=1;r=0;
+    #10;
+    s=0;r=0;
+    #10;
+    s=0;r=1;
+    #10;
+    s=0;r=0;
+    #10;
+    s=1;r=1;
+    #10;
+    rst=0;
+    #10;
     $finish;
-
 end
-
-always @(posedge clk)
-begin
-    #1;
-
-    $display(
-        "clk=%b S=%b R=%b | Q=%b Q_bar=%b",
-        clk, S, R, Q, Q_bar
-    );
+initial begin
+$monitor("Time=%0t|rst=%b|clk=%b|s=%b|r=%b|q=%b|qbar=%b",$time,rst,clk,s,r,q,qbar);
 end
-
 endmodule
 ```
 
 ---
 
-## 🌊 Expected Waveform
+## Waveform
 
-The simulation waveform verifies the following operations:
-
-```text
-S  R  | Q(next) | Operation
-----------------------------
-0  0  | Q       | Hold
-0  1  | 0       | Reset
-1  0  | 1       | Set
-1  1  | X       | Invalid
-```
-
-The output changes only at the **positive edge of the clock**.
-
----
-
-## 🔧 Working Principle
-
-The SR Flip-Flop responds to the inputs only at the positive edge of the clock.
-
-### 1. Hold Condition
-
-When:
-
-```text
-S = 0
-R = 0
-```
-
-The flip-flop retains its previous state.
-
-```text
-Q(next) = Q
-```
-
----
-
-### 2. Reset Condition
-
-When:
-
-```text
-S = 0
-R = 1
-```
-
-The output is reset:
-
-```text
-Q = 0
-Q_bar = 1
-```
-
----
-
-### 3. Set Condition
-
-When:
-
-```text
-S = 1
-R = 0
-```
-
-The output is set:
-
-```text
-Q = 1
-Q_bar = 0
-```
-
----
-
-### 4. Invalid Condition
-
-When:
-
-```text
-S = 1
-R = 1
-```
-
-Both Set and Reset are requested simultaneously.
-
-This is considered an **invalid condition** for a conventional SR Flip-Flop.
-
-In this Verilog implementation:
-
-```verilog
-Q <= 1'bx;
-```
-
-is used to represent the invalid/unknown state.
-
-Therefore:
-
-```text
-Q = X
-Q_bar = X
-```
-
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/1.%20SR/Image/Simulation.jpeg" width="80%">
+</p>
 ---
 
 ## 🏗️ Block Diagram
 
-```text
-                 ┌──────────────┐
-        S ──────►│              │
-                 │              │
-        R ──────►│ SR Flip-Flop │──────► Q
-                 │              │
-      CLK ──────►│              │──────► Q̅
-                 └──────────────┘
-```
-
-### Internal Operation
-
-```text
-                    ┌─────────┐
-S ─────────────────►│         │
-                    │   SR    │──────► Q
-R ─────────────────►│   FF    │
-                    │         │──────► Q̅
-CLK ───────────────►│         │
-                    └─────────┘
-```
+<p align="center">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/1.%20SR/Image/Block%20Diagram.jpeg" width="80%">
+</p>
 
 The state changes only when a **positive edge of the clock** occurs.
 
 ---
 
-## 🔄 State Transition Summary
 
-```text
-             S=1,R=0
-          ┌─────────────┐
-          │             ▼
-      ┌───────┐       ┌───────┐
-      │ Q = 0 │       │ Q = 1 │
-      └───────┘       └───────┘
-          ▲             │
-          │             │
-          └─────────────┘
-             S=0,R=1
-
-        S=0,R=0 → Hold
-
-        S=1,R=1 → Invalid
-```
-
----
 
 ## 📊 Truth Table
 
