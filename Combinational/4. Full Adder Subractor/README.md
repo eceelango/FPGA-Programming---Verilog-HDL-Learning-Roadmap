@@ -50,7 +50,7 @@ A 4-bit Adder/Subtractor is a combinational circuit that performs arithmetic ope
 
 ## 🏗️ Block Diagram
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/2.%20Full%20Adder%20Subractor/Image/4%20Bit%20Adder%20Subractor%20Block%20Diagram.png" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/4.%20Full%20Adder%20Subractor/Image/4%20Bit%20Adder%20Subractor%20Block%20Diagram.png" width="80%">
 </p>
 
 ---
@@ -215,7 +215,7 @@ endmodule
 The testbench uses `$monitor` to display the input and output values during simulation.
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/2.%20Full%20Adder%20Subractor/Image/Stimulation.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Combinational/4.%20Full%20Adder%20Subractor/Image/Stimulation.jpeg" width="80%">
 </p>
 ---
 
