@@ -197,6 +197,7 @@ endmodule
 <p align="center">
 <img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/1.%20SR/Image/Simulation.jpeg" width="80%">
 </p>
+
 ---
 
 ## 🏗️ Block Diagram
