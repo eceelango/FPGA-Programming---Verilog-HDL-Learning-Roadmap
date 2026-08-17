@@ -174,7 +174,7 @@ endmodule
 ## Waveform
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/2.D/Image/stimulation_dff.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/3.D/Image/stimulation_dff.jpeg" width="80%">
 </p>
 
 ---
@@ -191,7 +191,7 @@ endmodule
 ## Implemented Design
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/2.D/Image/implemented_desgin_dff.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/1.%20Flip%20Flop/3.D/Image/implemented_desgin_dff.jpeg" width="80%">
 </p>
 
 ---
