@@ -58,7 +58,7 @@ A serial input is introduced at "Q[0]".
 ##  Block Diagram
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/Bidirectional_sreg/Image/Block%20diagram%20%26%20Flow%20chart_bidirectional_sreg.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/5.%20Bidirectional%20Shift%20Register/Image/Block%20diagram%20%26%20Flow%20chart_bidirectional_sreg.jpeg" width="80%">
 </p>
 
 ---
@@ -189,7 +189,7 @@ endmodule
 🌊 Waveform
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/Bidirectional_sreg/Image/stimulation_bidirectional_sreg.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/5.%20Bidirectional%20Shift%20Register/Image/stimulation_bidirectional_sreg.jpeg" width="80%">
 </p>
 
 ---
@@ -235,13 +235,13 @@ dir = 1
 ## 🏗️ Implemented Design
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/Bidirectional_sreg/Image/implemented_desgin_bidirectional_sreg.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/5.%20Bidirectional%20Shift%20Register/Image/implemented_desgin_bidirectional_sreg.jpeg" width="80%">
 </p>
 ---
 ## Project Summary
 
 <p align="center">
-<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/Bidirectional_sreg/Image/project_summary_bidirectional_sreg.jpeg" width="80%">
+<img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/5.%20Bidirectional%20Shift%20Register/Image/project_summary_bidirectional_sreg.jpeg" width="80%">
 </p>
 
 ---
