@@ -1,6 +1,6 @@
-##4-Bit SIPO Shift Register Using Verilog HDL
+## 4-Bit SIPO Shift Register Using Verilog HDL
 
-##📌 Overview
+## 📌 Overview
 
 This project demonstrates the implementation of a 4-Bit SIPO (Serial-In Parallel-Out) Shift Register using Verilog HDL.
 
@@ -12,7 +12,7 @@ The register shifts the incoming serial data on every positive edge of the clock
 
 To design and simulate a 4-bit SIPO Shift Register using Verilog HDL.
 ---
-##📖 Theory
+## 📖 Theory
 
 SIPO stands for Serial-In Parallel-Out.
 
@@ -44,7 +44,7 @@ Q[3:0]
 </p>
 
 ---
-##⚙️ Features
+## ⚙️ Features
 
 - 4-bit SIPO shift register
 - Serial data input
@@ -56,7 +56,7 @@ Q[3:0]
 - Testbench-based verification
 - Simulation waveform analysis
 ---
-##🛠️ Algorithm
+## 🛠️ Algorithm
 
 1. Declare the clock, reset, serial input, and 4-bit parallel output.
 2. Initialize the shift register to "0000" when reset is active.
@@ -66,19 +66,19 @@ Q[3:0]
 6. Observe the 4-bit parallel output.
 7. Verify the output after four clock cycles.
 ---
-##📥 Inputs
+## 📥 Inputs
 
 Signal| Description
 "clk"| Clock input
 "reset"| Reset signal
 "serial_in"| Serial data input
 ---
-##📤 Output
+## 📤 Output
 
 Signal| Description
 "parallel_out[3:0]"| 4-bit parallel data output
 ---
-##💻 Code
+## 💻 Code
 ```
 `timescale 1ns / 1ps
 
@@ -96,7 +96,7 @@ end
 assign dout=q0;
 endmodule
 ```
-##🧪 Test Bench
+## 🧪 Test Bench
 ```
 `timescale 1ns / 1ps
 
@@ -121,14 +121,14 @@ endmodule
 
 ```
 ---
-##🌊 Waveform
+## 🌊 Waveform
 
 <p align="center">
 <img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/2.%20SIPO/Image/stimulation_SIPO.jpeg" width="80%">
 </p>
 
 ---
-##🔄 Shift Operation
+## 🔄 Shift Operation
 
 At every positive edge of the clock:
 
@@ -151,7 +151,7 @@ Serial Input:    1 → 0 → 1 → 1
 
 Parallel Output: 1011
 ---
-##🏗️ Implemented Design
+## 🏗️ Implemented Design
 
 <p align="center">
 <img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/2.%20SIPO/Image/implemented_desgin_SIPO.jpeg" width="80%">
@@ -166,7 +166,7 @@ Parallel Output: 1011
 </p>
 
 ---
-##📊 Simulation
+## 📊 Simulation
 
 The design can be simulated using:
 
@@ -175,7 +175,7 @@ The design can be simulated using:
 - Icarus Verilog
 - EDA Playground
 ---
-##✅ Result
+## ✅ Result
 
 The 4-Bit SIPO Shift Register was successfully designed and simulated using Verilog HDL.
 
@@ -183,7 +183,7 @@ The circuit correctly accepts serial data one bit at a time and produces the cor
 
 The simulation verifies the serial-to-parallel data conversion and correct shifting operation.
 ---
-##🚀 Applications
+## 🚀 Applications
 
 SIPO shift registers are commonly used in:
 
@@ -199,6 +199,6 @@ SIPO shift registers are commonly used in:
 - Digital signal processing
 ---
 
-##📜 License
+## 📜 License
 
 This project is intended for educational and learning purposes.
