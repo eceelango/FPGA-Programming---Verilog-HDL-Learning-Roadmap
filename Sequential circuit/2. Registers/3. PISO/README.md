@@ -1,6 +1,6 @@
 ## 4-Bit PISO Shift Register Using Verilog HDL
 ---
-##📌 Overview
+## 📌 Overview
 
 This project demonstrates the implementation of a 4-Bit PISO (Parallel-In Serial-Out) Shift Register using Verilog HDL.
 
@@ -14,13 +14,13 @@ The register uses a load control signal to select between parallel loading and s
 The shift register operates on the positive edge of the clock and includes a reset functionality.
 ---
 
-##🎯 Aim
+## 🎯 Aim
 
 To design and simulate a 4-bit PISO Shift Register using Verilog HDL.
 
 ---
 
-##📖 Theory
+## 📖 Theory
 
 PISO stands for Parallel-In Serial-Out.
 
@@ -67,7 +67,7 @@ Q[3] → Q[2] → Q[1] → Q[0] → serial_out
 
 ---
 
-⚙️ Features
+## ⚙️ Features
 
 - 4-bit PISO shift register
 - Parallel data loading
@@ -82,7 +82,7 @@ Q[3] → Q[2] → Q[1] → Q[0] → serial_out
 
 ---
 
-##🛠️ Algorithm
+## 🛠️ Algorithm
 
 1. Declare the clock, reset, load control, parallel input, and serial output.
 2. Initialize the shift register to "0000" when reset is active.
@@ -94,7 +94,7 @@ Q[3] → Q[2] → Q[1] → Q[0] → serial_out
 
 ---
 
-##📥 Inputs
+## 📥 Inputs
 
 Signal| Description
 "clk"| Clock input
@@ -104,14 +104,14 @@ Signal| Description
 
 ---
 
-##📤 Output
+## 📤 Output
 
 Signal| Description
 "serial_out"| Serial data output
 
 ---
 
-##💻 Code
+## 💻 Code
 ```
 module register(dout,din,clk,load);
 input [3:0] din;
@@ -138,7 +138,7 @@ end
 assign dout=q[3];
 endmodule
 ```
-##🧪 Test Bench
+## 🧪 Test Bench
 
 ```
 module register_tb;
@@ -165,14 +165,14 @@ endmodule
 ```
 ---
 
-##🌊 Waveform
+## 🌊 Waveform
 
 <p align="center">
 <img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/3.%20PISO/Image/stimulation_PISO.jpeg" width="80%">
 </p>
 ---
 
-##🔄 Operation
+## 🔄 Operation
 
 "load"| Operation
 "0"| Serial Shift
@@ -196,7 +196,7 @@ q[3] → q[2] → q[1] → q[0] → serial_out
 
 ---
 
-##🏗️ Implemented Design
+## 🏗️ Implemented Design
 
 
 <p align="center">
@@ -213,7 +213,7 @@ q[3] → q[2] → q[1] → q[0] → serial_out
 
 ---
 
-##📊 Simulation
+## 📊 Simulation
 
 The design can be simulated using:
 
@@ -222,7 +222,7 @@ The design can be simulated using:
 - Icarus Verilog
 - EDA Playground
 
-##✅ Result
+## ✅ Result
 
 The 4-Bit PISO Shift Register was successfully designed and simulated using Verilog HDL.
 
@@ -230,7 +230,7 @@ The circuit correctly loads 4-bit parallel data when the "load" signal is assert
 
 The simulation verifies that the parallel input data is successfully converted into a serial data stream.
 
-##🚀 Applications
+## 🚀 Applications
 
 PISO shift registers are commonly used in:
 
@@ -246,6 +246,6 @@ PISO shift registers are commonly used in:
 - Data transfer circuits
 ---
 
-##📜 License
+## 📜 License
 
 This project is intended for educational and learning purposes.
