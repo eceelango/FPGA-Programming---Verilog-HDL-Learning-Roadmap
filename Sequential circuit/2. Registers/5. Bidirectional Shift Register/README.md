@@ -186,7 +186,7 @@ end
 endmodule
 ```
 --- 
-🌊 Waveform
+## 🌊 Waveform
 
 <p align="center">
 <img src="https://github.com/eceelango/FPGA-Programming---Verilog-HDL-Learning-Roadmap/blob/main/Sequential%20circuit/2.%20Registers/5.%20Bidirectional%20Shift%20Register/Image/stimulation_bidirectional_sreg.jpeg" width="80%">
@@ -255,7 +255,7 @@ The design can be simulated using:
 - Icarus Verilog
 - EDA Playground
 
-✅ Result
+## ✅ Result
 
 The 4-Bit Bidirectional Shift Register was successfully designed and simulated using Verilog HDL.
 
@@ -263,7 +263,7 @@ The circuit correctly performs both left and right shifting operations according
 
 The register also correctly resets its contents to "0000" when the reset signal is asserted.
 
-🚀 Applications
+## 🚀 Applications
 
 Bidirectional shift registers are commonly used in:
 
