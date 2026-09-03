@@ -95,7 +95,7 @@ Signal| Description
 ---
 
 ## 💻 Code
-
+```
 module johnson_counter(y,clk,rst);
 output reg [3:0] y;
 input clk,rst;
@@ -112,11 +112,11 @@ y[3] <= y[2];
 end
 end 
 endmodule
-
+```
 ---
 
 ## 🧪 Test Bench
-
+```
 module johnson_tb;
 reg  clk, rst;
 wire [3:0] y;
@@ -156,7 +156,7 @@ clk = 1;
 $finish;
 end
 endmodule
-
+```
 ---
 
 ## 🌊 Waveform
