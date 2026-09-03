@@ -32,15 +32,15 @@ Therefore, a 4-bit Johnson Counter has:
 
 The counting sequence is:
 
-0000
-1000
-1100
-1110
-1111
-0111
-0011
-0001
-0000
+0000     
+1000        
+1100      
+1110     
+1111       
+0111      
+0011     
+0001     
+0000      
 
 The counter shifts its data by one position at every clock edge while the inverted output of the last flip-flop is fed back to the first flip-flop.
 
@@ -55,33 +55,34 @@ The counter shifts its data by one position at every clock edge while the invert
 
 ## ⚙️ Features
 
-- 4-bit Johnson Counter
-- Twisted Ring Counter implementation
-- 8 unique counting states
-- Positive edge-triggered clock
-- Synchronous sequential operation
-- Reset functionality
-- Behavioral modeling using Verilog HDL
-- Automatically repeats the sequence after 8 states
+- 4-bit Johnson Counter  
+- Twisted Ring Counter implementation    
+- 8 unique counting states    
+- Positive edge-triggered clock    
+- Synchronous sequential operation    
+- Reset functionality    
+- Behavioral modeling using Verilog HDL   
+- Automatically repeats the sequence after 8 states   
   
 ---
 
 ## 🛠️ Algorithm
 
-1. Declare the clock, reset, and 4-bit counter output.
-2. Initialize the counter to "0000" when reset is active.
-3. On every positive edge of the clock:
-   - Shift the current counter value by one position.
-   - Feed the complement of the last bit back into the first bit.
-4. Continue the shifting operation for every clock cycle.
-5. Observe the 8-state Johnson Counter sequence using simulation waveforms.
-6. After reaching "0001", the counter returns to "0000" and repeats the sequence.
+1. Declare the clock, reset, and 4-bit counter output.   
+2. Initialize the counter to "0000" when reset is active.   
+3. On every positive edge of the clock:   
+   - Shift the current counter value by one position.   
+   - Feed the complement of the last bit back into the first bit.   
+4. Continue the shifting operation for every clock cycle.   
+5. Observe the 8-state Johnson Counter sequence using simulation waveforms.   
+6. After reaching "0001", the counter returns to "0000" and repeats the sequence.   
    
 ---
 
 ## 📥 Inputs
 
-Signal| Description
+|Signal| Description|
+|------|-------------|
 "clk"| Clock input
 "reset"| Reset signal
 
@@ -89,7 +90,8 @@ Signal| Description
 
 ## 📤 Output
 
-Signal| Description
+|Signal| Description|
+|-------|-------------|
 "count[3:0]"| 4-bit Johnson Counter output
 
 ---
@@ -167,7 +169,8 @@ endmodule
 
 ## 🔄 Counting Sequence
 
-Clock Cycle| Decimal| Binary
+|Clock Cycle| Decimal| Binary|
+|-----------|-------|-------|
 0| 0| "0000"
 1| 8| "1000"
 2| 12| "1100"
