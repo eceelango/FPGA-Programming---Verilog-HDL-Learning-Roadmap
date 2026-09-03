@@ -96,65 +96,65 @@ Signal| Description
 
 ## 💻 Code
 
-`timescale 1ns / 1ps
-
-module johnson_counter(
-    output reg [3:0] count,
-    input clk,
-    input reset
-);
-
-always @(posedge clk)
+module johnson_counter(y,clk,rst);
+output reg [3:0] y;
+input clk,rst;
+always @(negedge clk or posedge rst)
 begin
-    if (reset)
-        count <= 4'b0000;
-    else
-        count <= {count[2:0], ~count[3]};
+if (rst)
+y = 4'b0000;
+else
+begin 
+y[0] <= ~y[3];
+y[1] <= y[0];
+y[2] <= y[1];
+y[3] <= y[2];
 end
-
+end 
 endmodule
 
 ---
 
 ## 🧪 Test Bench
 
-`timescale 1ns / 1ps
-
-module tb_johnson_counter;
-
-reg clk;
-reg reset;
-wire [3:0] count;
-
-johnson_counter uut(
-    .count(count),
-    .clk(clk),
-    .reset(reset)
-);
-
+module johnson_tb;
+reg  clk, rst;
+wire [3:0] y;
+johnson_counter uut (.clk(clk),.rst(rst),.y(y));
 initial
 begin
-    clk = 0;
-    forever #10 clk = ~clk;
+clk = 1;
+rst = 1;
+#10;
+$display("%b %b %b", clk, rst, y);
+clk = 0;
+#10;
+$display("%b %b %b", clk, rst, y);
+rst = 0;
+clk = 1;
+#10;
+clk = 0;
+#10;
+$display("%b %b %b", clk, rst, y);
+clk = 1;
+#10;
+clk = 0;
+#10;
+$display("%b %b %b", clk, rst, y);
+clk = 1;
+#10;
+clk = 0;
+#10;
+$display("%b %b %b", clk, rst, y);
+clk = 1;
+#10;
+clk = 0;
+#10;
+$display("%b %b %b", clk, rst, y);
+clk = 1;
+#10;
+$finish;
 end
-
-initial
-begin
-    reset = 1;
-    #20;
-
-    reset = 0;
-    #180;
-
-    $finish;
-end
-
-always @(posedge clk)
-begin
-    #1;
-    $display("clk=%b reset=%b count=%b", clk, reset, count);
-end
-
 endmodule
 
 ---
